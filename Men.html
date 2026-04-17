@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style.css">
+    <title>FASHION Factory🛍️</title>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-logo">
+                <h1>FASHION Factory🛍️</h1>
+            </div>
+            <div class="navbar-menu">
+                <ul>
+                            <li> <a href="Home.html">Home</a>
+                            <li><a href="Men.html">Men</a>
+                            <li><a href="Women.html">Women</a>
+                            <li><a href="Kids.html">Kids</a>
+                            <li><a href="Contact Us.html">Contact Us</a>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header with Moving Text -->
+    <header class="header">
+        <div class="moving-text-container">
+            <p class="subtitle moving-text">Flat 50% Off....Hurry up sale ends tonight!!</p>
+        </div>
+    </header>
+    <h4>Men's Fashion</h4>
+    <table border="1">
+    <tr>
+        <td>
+          <img src="D:\Study\RVU\Web Design\mini project\4.jpg"width="300px" height="300px">
+          <h3>Red Shirt</h3>
+          <p class="price">$ 500</p>
+          <!-- Add to Cart button -->
+          <button class="add-to-cart" onclick="addToCart('Red Shirt','500')">Add to Cart</button>
+          <!-- Remove button -->
+          <button class="remove-from-cart" onclick="removeFromCart('Red Shirt','500')">Remove</button>
+        </td>
+        <td>
+          <img src="D:\Study\RVU\Web Design\mini project\5.jpg"width="300px" height="300px">
+          <h3>Black T-shirt</h3>
+          <p class="price">$1099.99</p>
+          <!-- Add to Cart button -->
+          <button class="add-to-cart" onclick="addToCart('Black T-shirt','1099')">Add to Cart</button>
+          <!-- Remove button -->
+          <button class="remove-from-cart" onclick="removeFromCart('Black T-shirt','1099')">Remove</button>
+      </td>
+        <td>
+          <img src="D:\Study\RVU\Web Design\mini project\6.jpg" width="300px" height="300px">
+          <h3>Blue Jeans</h3>
+          <p class="price">$799.99</p>
+          <!-- Add to Cart button -->
+          <button class="add-to-cart" onclick="addToCart('Blue Jeans','799')">Add to Cart</button>
+          <!-- Remove button -->
+          <button class="remove-from-cart" onclick="removeFromCart('Blue Jeans','799')">Remove</button>
+      </td>
+      <td>
+          <img src="D:\Study\RVU\Web Design\mini project\7.jpg"width="300px" height="300px">
+          <h3>White Shirt</h3>
+          <p class="price">$799.99</p>
+          <!-- Add to Cart button -->
+          <button class="add-to-cart" onclick="addToCart('White Shirt','799')">Add to Cart</button>
+          <!-- Remove button -->
+          <button class="remove-from-cart" onclick="removeFromCart('White Shirt','799')">Remove</button>
+      </td>
+      <td>
+          <img src="D:\Study\RVU\Web Design\mini project\9.jpg" width="300px" height="300px">
+          <h3>Denim Jacket</h3>
+          <p class="price">$799.99</p>
+          <!-- Add to Cart button -->
+          <button class="add-to-cart" onclick="addToCart('Denim Jacket','799')">Add to Cart</button>
+          <!-- Remove button -->
+          <button class="remove-from-cart" onclick="removeFromCart('Denim Jacket','799')">Remove</button>
+      </td>
+      </tr>
+      </table>
+    </table>
+        <!-- Your existing HTML code -->
+    
+        <!-- Shopping cart display -->
+        <div id="cart">
+            <h3>Shopping Cart</h3>
+            <ul id="cart-items"></ul>
+            <p id="totalPrice">0</p>
+        </div>
+    
+        <!-- JavaScript for the shopping cart functionality -->
+        <script>
+            // Initialize total amount
+            let totalPrice = 0;
+    
+            // Function to add an item to the cart
+            function addToCart(product, price) {
+                var cartItems = document.getElementById('cart-items');
+                var listItem = document.createElement('li');
+                listItem.textContent = 'Product: ' + product + ', Price: $' + price;
+                cartItems.appendChild(listItem);
+    
+                // Increment total amount
+                totalPrice += parseFloat(price);
+                updateTotalPrice();
+            }
+    
+            // Function to remove an item from the cart
+            function removeFromCart(product, price) {
+                var cartItems = document.getElementById('cart-items');
+                var items = cartItems.getElementsByTagName('li');
+                for (var i = 0; i < items.length; i++) {
+                    if (items[i].textContent.includes(product)) {
+                        cartItems.removeChild(items[i]);
+    
+                        // Decrement total amount
+                        totalPrice -= parseFloat(price);
+                        updateTotalPrice();
+                        break;
+                    }
+                }
+            }
+    
+            // Function to update the total price display
+            function updateTotalPrice() {
+                var totalPriceElement = document.getElementById('totalPrice');
+                totalPriceElement.textContent = 'Total: $' + totalPrice.toFixed(2);
+            }
+        </script>
+    
+    
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy;2027 Fashion Factory By Kritin Pradeep And Deekshith CR</p>
+        </div>
+    </footer>
+
+</body>
+</html>
