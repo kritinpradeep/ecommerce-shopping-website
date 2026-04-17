@@ -1,7 +1,7 @@
 E-commerce Website
 
 ## 📌 Overview
-Fashion Factory is a responsive shopping website designed to provide a seamless online shopping experience.
+This is a responsive shopping website designed to provide a seamless online shopping experience.
 
 ## 🚀 Features
 - Product catalog with images, descriptions, and pricing  
